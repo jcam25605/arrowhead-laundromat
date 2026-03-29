@@ -4,119 +4,214 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Arrowhead Laundromat | Sioux Falls</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --navy: #0b1f3a;
+      --blue: #2f5d8c;
+      --light: #f6f8fa;
+      --gray: #6b7280;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #f5f7fa;
-      color: #0b1f3a;
+      background: var(--light);
+      color: var(--navy);
+      line-height: 1.6;
     }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
+
+    .logo {
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: var(--navy);
+      font-weight: 500;
+    }
+
     header {
-      position: relative;
-      height: 80vh;
+      height: 90vh;
       background: url('hero.jpg') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       color: white;
+      position: relative;
     }
+
     header::after {
-      content: "";
+      content: '';
       position: absolute;
       inset: 0;
-      background: rgba(11, 31, 58, 0.65);
+      background: rgba(11,31,58,0.7);
     }
-    .hero-content {
+
+    .hero {
       position: relative;
       z-index: 2;
       max-width: 800px;
+      padding: 20px;
     }
+
     h1 {
-      font-size: 3rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
       margin-bottom: 1rem;
     }
+
     .btn {
-      background: #2f5d8c;
+      background: var(--blue);
       padding: 14px 28px;
       color: white;
       text-decoration: none;
       border-radius: 6px;
       font-weight: 600;
+      display: inline-block;
+      margin-top: 20px;
     }
+
     section {
-      padding: 60px 20px;
+      padding: 80px 20px;
       max-width: 1100px;
       margin: auto;
     }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 30px;
     }
+
     .card {
       background: white;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
     }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .reviews {
+      background: #eef2f7;
+    }
+
     footer {
-      background: #0b1f3a;
+      background: var(--navy);
       color: white;
       text-align: center;
-      padding: 30px 10px;
+      padding: 40px 20px;
+    }
+
+    iframe {
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    @media(max-width:768px) {
+      h1 { font-size: 2.5rem; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="hero-content">
-      <h1>Clean. Fast. Reliable.</h1>
-      <p>Modern machines, free Wi‑Fi, and a safe, comfortable space to get your laundry done.</p>
-      <a class="btn" href="#location">Get Directions</a>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo">Arrowhead Laundromat</div>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#location">Location</a>
     </div>
-  </header>
+  </div>
+</nav>
 
-  <section>
-    <h2>Why Choose Arrowhead Laundromat</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Large Capacity Machines</h3>
-        <p>Wash comforters, bedding, and large family loads with ease.</p>
-      </div>
-      <div class="card">
-        <h3>Pay Your Way</h3>
-        <p>Use coins, credit, or debit — whichever is most convenient.</p>
-      </div>
-      <div class="card">
-        <h3>Free Wi‑Fi</h3>
-        <p>Stay connected while your laundry runs.</p>
-      </div>
-      <div class="card">
-        <h3>Snacks Next Door</h3>
-        <p>Attached convenience store for drinks, snacks, and essentials.</p>
-      </div>
+<header>
+  <div class="hero">
+    <h1>Clean, Modern Laundry — Without the Hassle</h1>
+    <p>Spacious machines, free Wi‑Fi, and a safe, well‑lit facility in the heart of Sioux Falls.</p>
+    <a class="btn" href="#location">Get Directions</a>
+  </div>
+</header>
+
+<section id="features">
+  <div class="section-title">
+    <h2>Everything You Need in One Place</h2>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <h3>Large Capacity Washers</h3>
+      <p>Perfect for comforters, bedding, and oversized loads — fewer cycles, faster results.</p>
     </div>
-  </section>
-
-  <section style="background:#eef2f7;">
-    <h2>What Customers Say</h2>
-    <div class="grid">
-      <div class="card">“Very nice facility — clean and lots of machines.”</div>
-      <div class="card">“Mega machines handled my king-size bedding easily.”</div>
-      <div class="card">“Free WiFi and easy to use machines — very convenient.”</div>
+    <div class="card">
+      <h3>Flexible Payments</h3>
+      <p>Pay with coins, debit, or credit cards for maximum convenience.</p>
     </div>
-  </section>
+    <div class="card">
+      <h3>Free High‑Speed Wi‑Fi</h3>
+      <p>Stay productive or relax online while your laundry is running.</p>
+    </div>
+    <div class="card">
+      <h3>Snacks & Essentials Nearby</h3>
+      <p>Convenience store attached so you can grab drinks, snacks, or supplies anytime.</p>
+    </div>
+  </div>
+</section>
 
-  <section id="location">
-    <h2>Visit Us</h2>
-    <p>Located next to Get‑n‑Go Convenience Store in Sioux Falls.</p>
-    <iframe src="https://maps.google.com/maps?q=Sioux%20Falls&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="350" style="border:0"></iframe>
-  </section>
+<section id="reviews" class="reviews">
+  <div class="section-title">
+    <h2>What Our Customers Say</h2>
+  </div>
+  <div class="grid">
+    <div class="card">“Very nice facility — clean and lots of washers and dryers.”</div>
+    <div class="card">“Mega machines handled my king‑size bedding easily.”</div>
+    <div class="card">“Free WiFi and easy to use machines — very convenient.”</div>
+  </div>
+</section>
 
-  <footer>
-    <p>© Arrowhead Laundromat</p>
-  </footer>
+<section id="location">
+  <div class="section-title">
+    <h2>Visit Arrowhead Laundromat</h2>
+  </div>
+  <p style="text-align:center;">Located next to Get‑n‑Go Convenience Store, Sioux Falls, South Dakota.</p>
+  <iframe src="https://maps.google.com/maps?q=Sioux%20Falls&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="350"></iframe>
+</section>
+
+<footer>
+  <p>© Arrowhead Laundromat • Clean • Safe • Convenient</p>
+</footer>
+
 </body>
 </html>
